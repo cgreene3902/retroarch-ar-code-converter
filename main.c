@@ -1,7 +1,5 @@
 // Convert AR codes from RetroArch into a usable format for melonDS
-#include <ctype.h>
 #include <stdio.h>
-#include <string.h>
 #include "functions.h"
 
 int main()

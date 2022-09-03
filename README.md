@@ -1,7 +1,5 @@
 # Converts AR codes for use with the melonDS emulator
 
-This is the testing branch so stuff might break or not work at all.
-
 This is primarily aimed at the standalone desktop version of the emulator since the RetroArch core version of melonDS uses a different format for the cheats, and most of the time I've personally had issues with the cheats not working at all in the melonDS core.
 
 All this does is simply converts an AR code that came from RetroArch's cheats folder which would look something like this:

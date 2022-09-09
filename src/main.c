@@ -6,11 +6,11 @@ int main(int argc, char **argv) {
     bool status = true;
     while (status == true) {
         char *buffer = malloc(sizeof(char) * MAXSIZE);
-        UserInput(buffer);
+        UserInput(buffer, MAXSIZE);
         result = stringcheck(buffer);
         if (result == true) {
             converter(buffer);
-            printf("%s\n",buffer);
+            printf("\nCopy this into the cheat menu\n%s\n\n",buffer);
             free(buffer);
             status = false;
         } else {

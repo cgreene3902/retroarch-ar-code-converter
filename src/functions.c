@@ -1,4 +1,50 @@
+#include <ctype.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdbool.h>
+#include <stdlib.h>
 #include "functions.h"
+
+void ArgTest(int arg_n) {
+    if (arg_n > 2) {
+        fprintf(stderr, "Too many args\n%s", HELPTEXT);
+        exit(EXIT_FAILURE);
+    }
+}
+
+int ArgCheck(int NumOfArgs, char **args) {
+    int state = 0;
+
+    if (NumOfArgs != 1) {
+        if (args[1][0] == '-') {
+            switch (args[1][1]) {
+            case 'i':
+                ArgTest(NumOfArgs);
+                state = 0;
+                break;
+            case 'h':
+                ArgTest(NumOfArgs);
+                state = 1;
+                break;
+            case 'a':
+                if (StringCheck(args[2]) != false)
+                    state = 2;
+                else {
+                    fprintf(stderr, "Invaild string input\n");
+                    exit(2);
+                } 
+                break;
+            default:
+                ArgTest(NumOfArgs);
+            }
+        } else {
+            fprintf(stderr, "Invaild argument\n%s", HELPTEXT);
+            exit(EXIT_FAILURE);
+        }
+    } else
+        state = 0;
+    return state;
+}
 
 void UserInput(char *buffer, int size) {
     printf("Copy and paste the cheat into here or press Control+C to exit: ");
@@ -12,7 +58,7 @@ void UserInput(char *buffer, int size) {
     }
 }
 
-bool stringcheck(char *_input) {
+bool StringCheck(char *_input) {
     int index, maximum = strlen(_input);
     int test = 0, plus = 0, alnum = 0;
     bool status = false;

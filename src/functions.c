@@ -1,9 +1,9 @@
 #include "functions.h"
 
-void UserInput(char *buffer) {
+void UserInput(char *buffer, int size) {
     printf("Copy and paste the cheat into here or press Control+C to exit: ");
     int index;
-    for (index = 0; index < MAXSIZE; index++) {
+    for (index = 0; index < size; index++) {
         char c = fgetc(stdin);
         if (c == '\n' || c == EOF) {
             break;
@@ -12,7 +12,7 @@ void UserInput(char *buffer) {
     }
 }
 
-int stringcheck(char *_input) {
+bool stringcheck(char *_input) {
     int index, maximum = strlen(_input);
     int test = 0, plus = 0, alnum = 0;
     bool status = false;
@@ -49,9 +49,4 @@ void converter(char *_input) {
                     _input[index] = ' ';
         }
     }
-}
-
-void printing(char *_input) {
-    printf("\nCopy this into the melonDS cheat menu\n");
-    printf("%s\n\n", _input);
 }

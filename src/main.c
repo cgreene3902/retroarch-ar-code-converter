@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include "functions.h"
 
+#define OUTPUTTEXT "\nCopy this into the cheat menu\n%s\n\n"
+
 int main(int argc, char **argv) {
     int ArgState = ArgCheck(argc, argv);
 
@@ -16,7 +18,7 @@ int main(int argc, char **argv) {
             result = StringCheck(buffer);
             if (result == true) {
                 converter(buffer);
-                printf("\nCopy this into the cheat menu\n%s\n\n",buffer);
+                printf(OUTPUTTEXT,buffer);
                 free(buffer);
                 status = false;
             } else {
@@ -30,7 +32,8 @@ int main(int argc, char **argv) {
         printf("%s", HELPTEXT);
         break;
     case 2:
-        printf("Not implemented yet\n");
+        converter(argv[2]);
+        printf(OUTPUTTEXT,argv[2]);
         break;
     default:
         printf("Invaild argument\n%s", HELPTEXT);

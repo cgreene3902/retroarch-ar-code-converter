@@ -26,14 +26,18 @@ int ArgCheck(int NumOfArgs, char **args) {
                 ArgTest(NumOfArgs);
                 state = 1;
                 break;
-            case 'a':
-                if (StringCheck(args[2]) != false)
-                    state = 2;
-                else {
-                    fprintf(stderr, "Invaild string input\n");
-                    exit(2);
-                } 
-                break;
+            case 't':
+                if (args[2] != NULL) {
+                    if (StringCheck(args[2]) != false)
+                        state = 2;
+                    else {
+                        fprintf(stderr, "Invaild string input\n");
+                        exit(2);
+                    } 
+                    break;
+                } else
+                fprintf(stderr, "No String input to convert\n");
+                exit(3);
             default:
                 ArgTest(NumOfArgs);
             }

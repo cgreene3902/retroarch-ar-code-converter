@@ -4,7 +4,7 @@
 #include <stdbool.h>
 
 #define MAXSIZE 10000 // This is likely larger enough, but can be increased if not
-#define HELPTEXT "Usage: converter [OPTION]\nDefault behavior is interactive mode\n\t-h\t\t\tprints this help message\n\t-i\t\t\tinteractive mode\n\t-a \"code goes here\"\ttake cheat as arg and convert it\n\t\n"
+#define HELPTEXT "Usage: converter [OPTION]\nDefault behavior is interactive mode\n\t-h\t\t\tprints this help message\n\t-i\t\t\tinteractive mode\n\t-t \"code goes here\"\ttake cheat as arg and convert it\n\t\n"
 
 void ArgTest(int arg_n);
 

@@ -32,6 +32,15 @@ In the instance that you are using the Flatpak of RetroArch then it will likely 
 Once you are in that folder you can find the cheats folder for the NDS and inside should be a lot of files with the extension ".cht"
 After you've found the game's .cht file that you're looking for, simply copy the text of the cheat that you want and paste it into the terminal and hit enter. After you do that, it should give you a nicely formatted AR code that works with the melonDS standalone emulator's cheat menu.
 
+## Usage as a command line tool
+```
+converter [option]
+    Default behavior is interactive mode
+    -h                      prints this help message
+    -i                      interactive mode
+    -t  "code goes here"    take cheat as arg and convert it
+```
+
 ## Why I wrote this?
 I'm new to writing C and thought this would be a good thing for me to write for practice so I can get more familiar with the language so I might be able to work on more complex things later on. My code is probably not perfect and I'm always trying to improve.
 
